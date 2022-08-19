@@ -1,0 +1,120 @@
+Object Oriented Programming (OOPS)
+
+
+
+Access specifiers => private, public, protected
+private => it cannot be access out of the class , can be accessed by the friend class but not by inherited class
+public => it can be used out of the class in which it is defined
+protected => it can share data members with the friend class and in inheritance
+
+class car {             
+    private:
+        int model;                //by default if we do not mention any access specifier then it is private by default
+
+    public:
+        float cost;
+    
+    protected:
+        string color;
+};
+
+int main() {
+    car c1;
+    c1.model = 2022;        //it will give an error because it is private
+    c1.cost = 53.55;
+    c1.color = "black";     //it will give an error becauseit is protected
+
+    return 0;
+}
+
+Giving functions in class car...
+class car {             
+    private:
+        int model;
+
+    public:
+        float cost;
+    
+    protected:
+        string color;
+
+        void input(){
+            cin>>model>>color;
+        }
+
+        void display(){
+            cout<<endl<<model<<endl<<color<<endl<<cost;
+        }
+};
+
+Another way of writing function(outside the class with the help of scope resolution operator)..
+return_type nameOfClass :: function_name(){
+    statement;
+}
+
+Friend Class......
+class car {             
+    private:
+        int model;
+
+    protected:
+        string color;
+
+    public:
+        float cost;
+    
+
+    friend class Honda;
+};
+
+class Honda{
+    public:
+        void input(Car c){
+            cin>>c.model>>c.name;
+            cout<<"model : "<<c.model<<endl;
+            cout<<"color : "<<c.color<<endl;
+        }
+};
+
+Memory is initialized while declaring the object only
+so to make changes at particular location we use & operator
+
+**best thing is to keep the data members as private**
+
+Constructors.......
+- default constructor is always running
+- name of constructor is same as name of class
+
+Parametrized Constructor
+we will give arguments to the object created 
+
+Copy Constructor
+class car {             
+
+    int model;                
+    float cost;
+    string color;
+
+    public:
+        car() {                     //default constructor
+            model = 2022;
+            color = "black";
+            cost = 34.74;
+        }
+
+        car(int m1, float p1){      //Parametrized constructor
+            model = m1;
+            cost = p1;
+        }
+
+        void display();
+
+        car(car &c1){
+            model = c1.model;
+            cost = c1.cost;
+        }
+        
+};
+
+Dynamic Constructors.....
+it is used if you want to assign the values to the constructor at run time not at compile time

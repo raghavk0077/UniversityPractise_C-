@@ -1,0 +1,23 @@
+Inheritance
+
+class baseClass {
+
+};
+
+class derivedClass: AccessSpecifier baseClass{      syntax for creating derived class
+
+};
+
+Base Class                              Derived Class
+
+Access Specifiers        private             public          protected
+
+private                  Not Accessed        Not Accessed    Not Accessed
+public                   private             public          protected
+protected                private             protected       protected
+
+Questions......
+1. find the union and intesrection of two sorted arrays
+2. write a program to merge to sorted arrays
+3. move all the negative elements to one side of the array
+4. find if there is any subarray with the sum equal to 0

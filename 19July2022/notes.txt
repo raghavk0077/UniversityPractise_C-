@@ -1,0 +1,69 @@
+constexpr int i{2+3}
+constexpr is a keyword used in previous versions of compilers to execute above statement...
+
+int a = 3 instead => const int a = 2
+int b = 4 instead => const int b = 4
+constexpr int i{a+b} ------- it will give an error bcoz a & b are not constants
+
+error without const
+(error: the value of 'a' is not usable in a constant expression
+     constexpr int i{a+b};
+                        ^
+constant.cpp:6:9: note: 'int a' is not const
+     int a = 4;
+         ^
+)
+-------------------------------------------------------------------------------------------------------------------------
+explicit type catsing can also be done by using 
+static_cast<float>(n) .... incase of float required datatype can be there and n is number
+
+-------------------------------------------------------------------------------------------------------------------------
+Local variable will get a priority in its scope more than any other variable
+eg..
+int x = 9;      //global variable
+int main(){
+
+    cout<<"x = "<<x;        //it will print 9
+
+    int x{8};
+    cout<<"x = "<<x;        //it will print 8
+    {
+        int x{6};
+        cout<<"x = "<<x;    //it will print 6
+    }
+}
+There is no error in this code...
+
+extern keyword is used to use the variable as global variable in multiple files but we need to declare variable as extern in the file we want to use
+eg.  extern int x = 9;     in one file
+and extern int x;    in other file then we can use this gloabal variable in multiple files
+
+------------------------------------------------------------------------------------------------------------------------
+functions....
+if function is declared before main then initialization and declaration is done no error will be there
+but if function is declared after main function then error will be produced....as follows
+ERROR:  In function 'int main()':
+        functionexp1.cpp:8:9: error: 'add' was not declared in this scope
+         add();
+         ^
+
+we have to give forward declaration to use our function if it is writter=n after main function
+eg.  void add();        //written before main
+
+Local and Global variables are mainly asked with functions in further interviews
+
+-------------------------------------------------------------------------------------------------------------------------
+Pointers
+& => address of
+eg. int x;
+    cout<<&x;       => it will print address of variable x
+
+whenever you declare a pointer declare it as null pointer
+int *y = NULL;
+after you can give it any value
+
+when you point a variable to the array it will point to the first element of array
+
+we can ommit & while pointing to the first element of array
+but pointing any other element we must use & otherwise it will give error
+

@@ -1,0 +1,21 @@
+User defined datatype
+exp -- if you want to collect data of students you can create your own datatype using struct
+==>
+struct Student {
+    int age, uid;
+    string name;
+} s1;
+s1 ==> it is object created for student to use in the program
+exp -- s1.name = "Raghav";
+
+Another way of declaring an object for struct
+struct Student s2;
+
+int main() {
+    struct Student s2;
+    cin>>s1.age>>s1.uid;
+    getline(cin,s1.name);
+    cin>>s2.age>>s2.uid;
+    getline(cin,s2.name);
+
+}

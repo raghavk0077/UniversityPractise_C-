@@ -1,0 +1,19 @@
+Recurrence relation
+1 - Tree / Tracing Tree
+2 - Substitution / backward Substitution
+3 - Master Theorem / formulae method / division method
+
+
+void Test(n){
+    if(n > 0){
+        cout<<n;
+        Test(n-1);
+    }
+}
+
+T(n) = T(n-1) + 1       => 1
+
+T(n-1) = T(n - 2) + 1
+   
+Substitute the value of T(n-1) in equation 1
+T[(n - 2) + 1] + 1
